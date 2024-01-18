@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>透明覆盖</title>
+    <link rel="stylesheet" href="../global.css">
+
+    <style>
+        .g-container{
+            width: 400px;
+            height: 80px;
+            border: 1px solid black;
+            padding: 0px;
+            margin: 20px;
+            overflow: hidden;
+            padding: 20px;
+            position: relative;
+        }
+
+        .g-container::before{
+            content: '';
+            width: 100px;
+            position: absolute;
+            right: 0;
+            height: 100%;
+            top: 0;
+            background: linear-gradient(90deg, transparent, #fff);
+        }
+
+        ul{
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        li{
+            border: 1px solid black;
+            padding: 5px 10px;
+            width: 80px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="g-container">
+        <ul>
+          <li>Button</li>
+          <li>Button</li>
+          <li>Button</li>
+          <li>Button</li>
+          <li>Button</li>
+          <li>Button</li>
+        </ul>
+    </div>
+</body>
+</html>
