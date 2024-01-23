@@ -1,0 +1,117 @@
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 10rem 0;
+}
+
+.container{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
+    /* background: linear-gradient(#fff, rgb(69, 156, 243)); */
+    margin: auto;
+    
+}
+
+.box{
+    width: 70%;
+    height: 300px;
+}
+
+.mask-1{
+    background: url(../assets//bg2.jpg);
+    background-size: cover;
+    mask-image: linear-gradient(90deg, transparent, #000);
+
+}
+
+.mask-2{
+    background: url(../assets//bg2.jpg);
+    background-size: cover;
+    mask: linear-gradient(135deg, transparent 30px, #fff 0) top left,
+            linear-gradient(-135deg, transparent 30px, #fff 0) top right,
+            linear-gradient(-45deg, transparent 30px, #fff 0) bottom right, 
+            linear-gradient(45deg, transparent 30px, #fff 0) bottom left;
+    /* mask: linear-gradient(135deg, transparent 30px, #fff 0)
+        top left,linear-gradient(-135deg, transparent 30px, #fff 0)
+        top right,linear-gradient(-45deg, transparent 30px, #fff 0)
+        bottom right,linear-gradient(45deg, transparent 30px, #fff 0)
+        bottom left; */
+    mask-size: 50% 50%;
+    mask-repeat: no-repeat;
+}
+
+.mask-3{
+    background: linear-gradient(45deg, #2179f5, #e91e63);
+    mask: radial-gradient(circle at 0 0, transparent 0, transparent 40px, #2179f5 41px),
+        radial-gradient(circle at 100% 100%, transparent 0, transparent 40px, #2179f5 41px),
+        radial-gradient(circle at 100% 0, transparent 0, transparent 40px, #2179f5 41px),
+        radial-gradient(circle at 0 100%, transparent 0, transparent 40px, #2179f5 41px);
+    mask-repeat: no-repeat;
+    mask-position: left top, bottom right, top right, bottom left;
+    mask-size: 51% 51%;
+    animation: bgPostition 5s infinite alternate;
+}
+
+@keyframes bgPostition{
+    0% {
+        filter: hue-rotate(0);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.mask-4{
+    background: url(../assets//bg-1.png);
+    background-size: cover;
+    position: relative;
+}
+
+.mask-4::before{
+    content: '';
+    background: url(../assets//bg2.jpg);
+    background-size: cover;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    mask: linear-gradient(45deg, #000 50%, transparent 50%);
+}
+
+.mask-5{
+    position: relative;
+    background: url(../assets/bg2.jpg);
+    background-size: 100% 100%;
+}
+
+.mask-5::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url(../assets//bg-1.png);
+    mask: linear-gradient(90deg, #fff 0%, #fff 50%, transparent 50%, transparent 100%);
+    mask-size: 200% 100%;
+    animation: maskRun 5s infinite alternate;
+}
+
+@keyframes maskRun{
+    0%{
+        mask-position: -100% 0;
+    }
+    100%{
+        mask-position: 0 0;
+    }
+}

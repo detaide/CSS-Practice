@@ -7,3 +7,25 @@
 ul li{
     list-style: none;
 }
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 10rem 0;
+}
+
+.container{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 30px;
+    /* background: linear-gradient(#fff, rgb(69, 156, 243)); */
+    margin: auto;
+    
+}
